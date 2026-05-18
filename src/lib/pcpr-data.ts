@@ -12,36 +12,27 @@ export type Subject = {
   topics: Topic[];
 };
 
-// 127 topics across subjects. Mock initial state per spec.
-export const initialSubjects: Subject[] = [
-  {
-    key: "portugues",
-    name: "Língua Portuguesa",
-    short: "Português",
-    topics: [
-      { id: 1, name: "Ortografia oficial", answered: 10, correct: 6 },
-      { id: 2, name: "Morfologia", answered: 10, correct: 9 },
-      { id: 3, name: "Sintaxe", answered: 0, correct: 0 },
-      { id: 4, name: "Acentuação gráfica", answered: 0, correct: 0 },
-      { id: 5, name: "Pontuação", answered: 0, correct: 0 },
-      { id: 6, name: "Concordância verbal e nominal", answered: 0, correct: 0 },
-      { id: 7, name: "Regência verbal e nominal", answered: 0, correct: 0 },
-      { id: 8, name: "Crase", answered: 0, correct: 0 },
-      { id: 9, name: "Colocação pronominal", answered: 0, correct: 0 },
-      { id: 10, name: "Semântica e estilística", answered: 0, correct: 0 },
-      { id: 11, name: "Interpretação de texto", answered: 0, correct: 0 },
-      { id: 12, name: "Tipologia textual", answered: 0, correct: 0 },
-      { id: 13, name: "Coesão e coerência", answered: 0, correct: 0 },
-      { id: 14, name: "Funções da linguagem", answered: 0, correct: 0 },
-      { id: 15, name: "Figuras de linguagem", answered: 0, correct: 0 },
-      { id: 16, name: "Variação linguística", answered: 0, correct: 0 },
-      { id: 17, name: "Reescritura de frases", answered: 0, correct: 0 },
-      { id: 18, name: "Vocabulário e sinonímia", answered: 0, correct: 0 },
-      { id: 19, name: "Redação oficial", answered: 0, correct: 0 },
-    ],
-  },
-  {
-    key: "informatica",
+// ─── Dados iniciais removidos: agora servidos pelo backend FastAPI ──────────
+// Os 127 tópicos são carregados via GET /api/topicos e transformados por
+// apiTopicosToSubjects() em src/lib/api.ts.
+// Mantemos aqui apenas os tipos e funções utilitárias de cálculo.
+
+// Compatibilidade: exporta array vazio — dados reais vêm do backend FastAPI
+export const initialSubjects: Subject[] = [];
+
+export function accuracy(t: { answered: number; correct: number }) {
+  if (!t.answered) return 0;
+  return (t.correct / t.answered) * 100;
+}
+
+export function subjectStats(s: Subject) {
+  const answered = s.topics.reduce((a, t) => a + t.answered, 0);
+  const correct = s.topics.reduce((a, t) => a + t.correct, 0);
+  const acc = answered ? (correct / answered) * 100 : 0;
+  const startedTopics = s.topics.filter((t) => t.answered > 0).length;
+  return { answered, correct, acc, startedTopics, totalTopics: s.topics.length };
+}
+
     name: "Informática",
     short: "Informática",
     topics: [

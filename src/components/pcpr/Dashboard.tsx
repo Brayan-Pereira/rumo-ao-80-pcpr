@@ -1,9 +1,16 @@
 import { useMemo, useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
-  initialSubjects,
+  fetchTopicos,
+  fetchSugestoes,
+  atualizarTopico,
+  apiTopicosToSubjects,
+  apiToSuggestion,
+  type SuggestionItem,
+} from "@/lib/api";
+import {
   accuracy,
   subjectStats,
-  suggestTopics,
   type Subject,
   type Topic,
 } from "@/lib/pcpr-data";
@@ -64,9 +71,43 @@ function statusBadge(acc: number, answered: number) {
 }
 
 export function Dashboard() {
-  const [subjects, setSubjects] = useState<Subject[]>(initialSubjects);
+  const queryClient = useQueryClient();
   const [editing, setEditing] = useState<{ subjectKey: string; topic: Topic } | null>(null);
   const [open, setOpen] = useState(false);
+
+  // ── Busca tópicos do backend ──────────────────────────────────────────────
+  const { data: topicosData, isLoading: loadingTopicos } = useQuery({
+    queryKey: ["topicos"],
+    queryFn: () => fetchTopicos(),
+    staleTime: 0,
+  });
+
+  const subjects: Subject[] = useMemo(
+    () => (topicosData ? apiTopicosToSubjects(topicosData.topicos) : []),
+    [topicosData],
+  );
+
+  // ── Busca sugestões do backend ────────────────────────────────────────────
+  const { data: sugestoesData } = useQuery({
+    queryKey: ["sugestoes"],
+    queryFn: () => fetchSugestoes(3),
+    staleTime: 0,
+    enabled: !!topicosData,
+  });
+
+  const suggestions: SuggestionItem[] = useMemo(
+    () => (sugestoesData?.sugestoes ?? []).map(apiToSuggestion),
+    [sugestoesData],
+  );
+
+  // ── Mutation: registrar nova sessão de estudos ────────────────────────────
+  const mutation = useMutation({
+    mutationFn: atualizarTopico,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["topicos"] });
+      queryClient.invalidateQueries({ queryKey: ["sugestoes"] });
+    },
+  });
 
   const totals = useMemo(() => {
     let answered = 0;
@@ -83,30 +124,29 @@ export function Dashboard() {
     return { answered, correct, reviewed, acc };
   }, [subjects]);
 
-  const suggestions = useMemo(() => suggestTopics(subjects, 3), [subjects]);
-
   const openUpdate = (subjectKey: string, topic: Topic) => {
     setEditing({ subjectKey, topic });
     setOpen(true);
   };
 
-  const handleSave = (a: number, c: number) => {
+  const handleSave = (novasRespondidas: number, novasAcertadas: number) => {
     if (!editing) return;
-    setSubjects((prev) =>
-      prev.map((s) =>
-        s.key !== editing.subjectKey
-          ? s
-          : {
-              ...s,
-              topics: s.topics.map((t) =>
-                t.id === editing.topic.id ? { ...t, answered: a, correct: c } : t,
-              ),
-            },
-      ),
-    );
+    mutation.mutate({
+      id_topico:        editing.topic.id,
+      novas_respondidas: novasRespondidas,
+      novas_acertadas:   novasAcertadas,
+    });
   };
 
   const overallOk = totals.acc >= TARGET;
+
+  if (loadingTopicos) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-muted-foreground animate-pulse">Carregando dados do edital…</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -371,6 +411,7 @@ export function Dashboard() {
         open={open}
         onOpenChange={setOpen}
         onSave={handleSave}
+        saving={mutation.isPending}
       />
     </div>
   );
