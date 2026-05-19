@@ -27,3 +27,10 @@ export function subjectStats(s: Subject) {
   const startedTopics = s.topics.filter((t) => t.answered > 0).length;
   return { answered, correct, acc, startedTopics, totalTopics: s.topics.length };
 }
+
+/** % de tópicos da matéria que atingiram a meta (padrão 80%) */
+export function subjectProgress(s: Subject, target = 80) {
+  if (!s.topics.length) return 0;
+  const done = s.topics.filter((t) => t.answered > 0 && accuracy(t) >= target).length;
+  return (done / s.topics.length) * 100;
+}

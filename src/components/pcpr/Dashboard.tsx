@@ -11,6 +11,7 @@ import {
 import {
   accuracy,
   subjectStats,
+  subjectProgress,
   type Subject,
   type Topic,
 } from "@/lib/pcpr-data";
@@ -121,7 +122,10 @@ export function Dashboard() {
       }
     }
     const acc = answered ? (correct / answered) * 100 : 0;
-    return { answered, correct, reviewed, acc };
+    const progress = subjects.length
+      ? subjects.reduce((sum, s) => sum + subjectProgress(s), 0) / subjects.length
+      : 0;
+    return { answered, correct, reviewed, acc, progress };
   }, [subjects]);
 
   const openUpdate = (subjectKey: string, topic: Topic) => {
@@ -139,6 +143,7 @@ export function Dashboard() {
   };
 
   const overallOk = totals.acc >= TARGET;
+  const progressOk = totals.progress >= TARGET;
 
   if (loadingTopicos) {
     return (
@@ -203,12 +208,12 @@ export function Dashboard() {
             </div>
             <div className="mt-3 space-y-2">
               <div className="flex items-end justify-between">
-                <span className={`text-2xl font-semibold ${overallOk ? "text-success" : "text-danger"}`}>
-                  {totals.acc.toFixed(0)}%
+                <span className={`text-2xl font-semibold ${progressOk ? "text-success" : "text-danger"}`}>
+                  {totals.progress.toFixed(0)}%
                 </span>
                 <span className="text-xs text-muted-foreground">Meta {TARGET}%</span>
               </div>
-              <AccuracyBar value={totals.acc} size="lg" />
+              <AccuracyBar value={totals.progress} size="lg" />
             </div>
           </div>
         </section>
@@ -275,8 +280,12 @@ export function Dashboard() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {subjects.map((s) => {
               const st = subjectStats(s);
-              const ok = st.acc >= TARGET;
-              const color = !st.answered
+              const prog = subjectProgress(s);
+              const topicsOnTarget = s.topics.filter(
+                (t) => t.answered > 0 && (t.correct / t.answered) * 100 >= TARGET
+              ).length;
+              const ok = prog >= TARGET;
+              const color = st.startedTopics === 0
                 ? "text-muted-foreground"
                 : ok
                   ? "text-success"
@@ -290,30 +299,30 @@ export function Dashboard() {
                     <div>
                       <h3 className="font-semibold leading-tight">{s.name}</h3>
                       <p className="text-[11px] uppercase tracking-wider text-muted-foreground mt-1">
-                        {st.startedTopics}/{st.totalTopics} tópicos iniciados
+                        {topicsOnTarget}/{st.totalTopics} tópicos na meta
                       </p>
                     </div>
-                    {statusBadge(st.acc, st.answered)}
+                    {statusBadge(prog, st.startedTopics)}
                   </div>
                   <div className="flex items-end justify-between mb-2">
                     <div>
                       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                        Acurácia
+                        Progresso
                       </div>
                       <div className={`text-2xl font-semibold ${color}`}>
-                        {st.answered ? `${st.acc.toFixed(0)}%` : "—"}
+                        {prog.toFixed(0)}%
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                        Questões
+                        Acurácia média
                       </div>
                       <div className="font-mono text-sm">
-                        {st.correct}/{st.answered}
+                        {st.answered ? `${st.acc.toFixed(0)}%` : "—"}
                       </div>
                     </div>
                   </div>
-                  <AccuracyBar value={st.acc} />
+                  <AccuracyBar value={prog} />
                 </div>
               );
             })}
@@ -332,6 +341,7 @@ export function Dashboard() {
             <Accordion type="multiple" className="divide-y divide-border">
               {subjects.map((s) => {
                 const st = subjectStats(s);
+                const prog = subjectProgress(s);
                 return (
                   <AccordionItem
                     key={s.key}
@@ -348,12 +358,12 @@ export function Dashboard() {
                         </div>
                         <div className="flex items-center gap-3">
                           <span
-                            className={`font-mono text-sm ${statusColor(st.acc, st.answered)}`}
+                            className={`font-mono text-sm ${statusColor(prog, st.startedTopics)}`}
                           >
-                            {st.answered ? `${st.acc.toFixed(0)}%` : "—"}
+                            {prog.toFixed(0)}%
                           </span>
                           <div className="w-24 hidden sm:block">
-                            <AccuracyBar value={st.acc} size="sm" />
+                            <AccuracyBar value={prog} size="sm" />
                           </div>
                         </div>
                       </div>
