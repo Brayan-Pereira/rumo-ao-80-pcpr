@@ -368,13 +368,16 @@ export function Dashboard() {
                     className="border-0 px-4 sm:px-6"
                   >
                     <AccordionTrigger className="hover:no-underline py-4">
-                      <div className="flex items-center justify-between w-full pr-4 gap-3">
+                      <div className="relative flex items-center justify-between w-full pr-4 gap-3">
                         <div className="flex items-center gap-3 text-left">
                           <span className="font-semibold">{s.name}</span>
                           <span className="text-xs text-muted-foreground font-mono hidden sm:inline">
                             {st.startedTopics}/{st.totalTopics}
                           </span>
                         </div>
+                        <span className="text-xs text-muted-foreground font-mono hidden sm:inline absolute left-1/2 -translate-x-1/2">
+                          {st.answered} questões respondidas
+                        </span>
                         <div className="flex items-center gap-3">
                           <span
                             className={`font-mono text-sm ${statusColor(prog, st.startedTopics)}`}
