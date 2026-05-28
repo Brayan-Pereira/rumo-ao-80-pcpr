@@ -52,6 +52,12 @@ export type AtualizarPayload = {
   novas_acertadas: number;
 };
 
+export type EditarPayload = {
+  id_topico: number;
+  total_respondidas: number;
+  total_acertadas: number;
+};
+
 // ─── Tipo de sugestão compatível com o Dashboard ─────────────────────────────
 export type SuggestionItem = {
   subjectKey: string;
@@ -156,6 +162,18 @@ export async function atualizarTopico(
   return handleResponse<{ topico: ApiTopic }>(
     await fetch(`${API_BASE}/api/atualizar`, {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+  );
+}
+
+export async function editarTopico(
+  payload: EditarPayload
+): Promise<{ topico: ApiTopic }> {
+  return handleResponse<{ topico: ApiTopic }>(
+    await fetch(`${API_BASE}/api/editar`, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     })

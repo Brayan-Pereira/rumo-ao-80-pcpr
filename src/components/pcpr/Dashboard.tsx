@@ -4,6 +4,7 @@ import {
   fetchTopicos,
   fetchSugestoes,
   atualizarTopico,
+  editarTopico,
   apiTopicosToSubjects,
   apiToSuggestion,
   type SuggestionItem,
@@ -110,6 +111,15 @@ export function Dashboard() {
     },
   });
 
+  // ── Mutation: editar total absoluto de um tópico ──────────────────────────
+  const editMutation = useMutation({
+    mutationFn: editarTopico,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["topicos"] });
+      queryClient.invalidateQueries({ queryKey: ["sugestoes"] });
+    },
+  });
+
   const totals = useMemo(() => {
     let answered = 0;
     let correct = 0;
@@ -139,6 +149,15 @@ export function Dashboard() {
       id_topico:        editing.topic.id,
       novas_respondidas: novasRespondidas,
       novas_acertadas:   novasAcertadas,
+    });
+  };
+
+  const handleEdit = (totalRespondidas: number, totalAcertadas: number) => {
+    if (!editing) return;
+    editMutation.mutate({
+      id_topico:         editing.topic.id,
+      total_respondidas: totalRespondidas,
+      total_acertadas:   totalAcertadas,
     });
   };
 
@@ -421,7 +440,8 @@ export function Dashboard() {
         open={open}
         onOpenChange={setOpen}
         onSave={handleSave}
-        saving={mutation.isPending}
+        onEdit={handleEdit}
+        saving={mutation.isPending || editMutation.isPending}
       />
     </div>
   );
