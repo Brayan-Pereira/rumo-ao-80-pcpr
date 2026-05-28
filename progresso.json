@@ -1,0 +1,893 @@
+{
+  "topicos": [
+    {
+      "id": 1,
+      "materia": "Língua Portuguesa",
+      "topico": "Ortografia oficial e Acentuação gráfica.",
+      "respondidas": 17,
+      "acertadas": 13
+    },
+    {
+      "id": 2,
+      "materia": "Língua Portuguesa",
+      "topico": "Morfologia: Identificação e função das classes de palavras.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 3,
+      "materia": "Língua Portuguesa",
+      "topico": "Sintaxe da Oração e do Período (Coordenação e Subordinação).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 4,
+      "materia": "Língua Portuguesa",
+      "topico": "Normas de Concordância (Nominal e Verbal).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 5,
+      "materia": "Língua Portuguesa",
+      "topico": "Normas de Regência (Nominal e Verbal) e uso da Crase.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 6,
+      "materia": "Língua Portuguesa",
+      "topico": "Pontuação: Emprego e efeitos de sentido no texto.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 7,
+      "materia": "Língua Portuguesa",
+      "topico": "Mecanismos de Coesão: Pronomes, conectivos e relatores.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 8,
+      "materia": "Língua Portuguesa",
+      "topico": "Semântica: Significado de palavras e expressões em contexto; relações lógicas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 9,
+      "materia": "Língua Portuguesa",
+      "topico": "Relações estruturais e semânticas entre frases e expressões.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 10,
+      "materia": "Língua Portuguesa",
+      "topico": "Elementos textuais: Fatos, opiniões, argumentos e teses.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 11,
+      "materia": "Língua Portuguesa",
+      "topico": "Compreensão e Intelecção de Textos: Significado global e síntese.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 12,
+      "materia": "Língua Portuguesa",
+      "topico": "Hierarquia de Ideias: Identificação de ideias principais e secundárias.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 13,
+      "materia": "Língua Portuguesa",
+      "topico": "Inferência e Dedução: Identificação de pressupostos e pontos de vista.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 14,
+      "materia": "Língua Portuguesa",
+      "topico": "Relações Intratextuais e Intertextuais (Intertextualidade).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 15,
+      "materia": "Língua Portuguesa",
+      "topico": "Gêneros e Tipologias Textuais: Análise de textos informativos, publicitários, charges e tiras.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 16,
+      "materia": "Língua Portuguesa",
+      "topico": "Organização Argumentativa: Estrutura e avaliação de argumentos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 17,
+      "materia": "Língua Portuguesa",
+      "topico": "Vozes do Texto: Identificação de falas, citações e posicionamentos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 18,
+      "materia": "Língua Portuguesa",
+      "topico": "Estudo da Variedade Linguística: Registros formais e informais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 19,
+      "materia": "Língua Portuguesa",
+      "topico": "Posição do Autor diante do Tema: Identificação de fato vs. opinião.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 20,
+      "materia": "Informática",
+      "topico": "Funcionamento básico do computador e componentes internos (CPU, Memória, Armazenamento).",
+      "respondidas": 10,
+      "acertadas": 8
+    },
+    {
+      "id": 21,
+      "materia": "Informática",
+      "topico": "Operação de Periféricos: Instalação e uso de Impressoras e Scanners.",
+      "respondidas": 10,
+      "acertadas": 6
+    },
+    {
+      "id": 22,
+      "materia": "Informática",
+      "topico": "Noções de conectividade: Cabos, entradas e conexões de dispositivos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 23,
+      "materia": "Informática",
+      "topico": "Conceitos básicos do sistema operacional Linux e interface do Ubuntu.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 24,
+      "materia": "Informática",
+      "topico": "Operação de Arquivos no Linux: Permissões, criar, mover, copiar e excluir.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 25,
+      "materia": "Informática",
+      "topico": "Estrutura de diretórios do Linux (home, bin, etc).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 26,
+      "materia": "Informática",
+      "topico": "Noções de rede interna dentro do ambiente Linux.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 27,
+      "materia": "Informática",
+      "topico": "Navegação na Web: Utilização e configuração do Firefox e Google Chrome.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 28,
+      "materia": "Informática",
+      "topico": "Ferramentas de busca, histórico de navegação, favoritos e extensões.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 29,
+      "materia": "Informática",
+      "topico": "Correio Eletrônico: Envio, recebimento, anexos e organização de e-mails.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 30,
+      "materia": "Informática",
+      "topico": "LibreOffice Writer: Edição de texto, formatação e ferramentas de revisão.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 31,
+      "materia": "Informática",
+      "topico": "LibreOffice Calc: Criação de planilhas, fórmulas, funções básicas e gráficos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 32,
+      "materia": "Informática",
+      "topico": "Atalhos de teclado específicos do ambiente Linux e suíte LibreOffice.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 33,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Conjuntos Numéricos e Operações com Números Reais.",
+      "respondidas": 13,
+      "acertadas": 7
+    },
+    {
+      "id": 34,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Razão, Proporção e Regra de Três (Simples e Composta).",
+      "respondidas": 10,
+      "acertadas": 5
+    },
+    {
+      "id": 35,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Porcentagem: Cálculos, aumentos e descontos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 36,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Análise Combinatória: Princípio fundamental da contagem, arranjos e combinações.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 37,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Equações de 1º e 2º graus e Sistemas Lineares.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 38,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Geometria Plana: Áreas, perímetros e semelhança de triângulos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 39,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Triângulo Retângulo: Teorema de Pitágoras e relações métricas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 40,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Geometria Espacial: Cálculo de Volume e Capacidade.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 41,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Leitura e interpretação de dados expressos em Tabelas e Gráficos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 42,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Medidas de Tendência Central: Média (aritmética simples e ponderada), Moda e Mediana.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 43,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Proposições: Conceitos iniciais, valores lógicos e sentenças abertas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 44,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Conectivos Lógicos e representações simbólicas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 45,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Tabelas-Verdade: Construção e análise de validade de proposições compostas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 46,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Equivalências Lógicas: Leis de Morgan e equivalência da condicional.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 47,
+      "materia": "Raciocínio Lógico e Matemático",
+      "topico": "Implicação Lógica e Argumentação Lógica: Métodos de dedução.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 48,
+      "materia": "Direito Administrativo",
+      "topico": "Conceitos de Estado, Governo e Administração Pública.",
+      "respondidas": 10,
+      "acertadas": 8
+    },
+    {
+      "id": 49,
+      "materia": "Direito Administrativo",
+      "topico": "Princípios fundamentais da Administração Pública (Expressos e Implícitos).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 50,
+      "materia": "Direito Administrativo",
+      "topico": "Organização Administrativa: Administração Direta e Indireta.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 51,
+      "materia": "Direito Administrativo",
+      "topico": "Poderes Administrativos: Poder Hierárquico e Poder Disciplinar.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 52,
+      "materia": "Direito Administrativo",
+      "topico": "Poder Regulamentar e Poder de Polícia.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 53,
+      "materia": "Direito Administrativo",
+      "topico": "Uso e Abuso do Poder: Excesso de poder e desvio de finalidade.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 54,
+      "materia": "Direito Administrativo",
+      "topico": "Agentes Públicos: Espécies e classificação geral.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 55,
+      "materia": "Direito Administrativo",
+      "topico": "Regime Constitucional dos Agentes Públicos: Cargo, Emprego e Função Pública.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 56,
+      "materia": "Direito Administrativo",
+      "topico": "Provimento e Vacância de cargos públicos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 57,
+      "materia": "Direito Administrativo",
+      "topico": "Direitos de Movimentação: Remoção, Redistribuição e Substituição.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 58,
+      "materia": "Direito Administrativo",
+      "topico": "Direitos, Vantagens e Regime Disciplinar aplicável aos servidores.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 59,
+      "materia": "Direito Administrativo",
+      "topico": "Responsabilidades do Agente Público: Civil, Criminal e Administrativa.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 60,
+      "materia": "Direito Administrativo",
+      "topico": "Serviços Públicos: Conceito, classificação, regulamentação e princípios norteadores.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 61,
+      "materia": "Direito Administrativo",
+      "topico": "Formas de Delegação de Serviços Públicos: Concessão, Permissão e Autorização.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 62,
+      "materia": "Direito Administrativo",
+      "topico": "Regulamentação e Controle da prestação de serviços delegados.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 63,
+      "materia": "Direito Administrativo",
+      "topico": "Controle da Administração Pública: Controle Administrativo, Judicial e Legislativo.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 64,
+      "materia": "Direito Administrativo",
+      "topico": "Responsabilidade Civil do Estado: Teoria do Risco Administrativo e Excludentes.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 65,
+      "materia": "Direito Administrativo",
+      "topico": "Ação de Regresso contra o agente público causador do dano.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 66,
+      "materia": "Direito Constitucional",
+      "topico": "Direitos e Deveres Individuais e Coletivos (Artigo 5º da CF).",
+      "respondidas": 43,
+      "acertadas": 33
+    },
+    {
+      "id": 67,
+      "materia": "Direito Constitucional",
+      "topico": "Direitos Sociais previstos na Constituição Federal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 68,
+      "materia": "Direito Constitucional",
+      "topico": "Nacionalidade: Critérios de atribuição, natos, naturalizados e cargos privativos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 69,
+      "materia": "Direito Constitucional",
+      "topico": "Direitos Políticos e Partidos Políticos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 70,
+      "materia": "Direito Constitucional",
+      "topico": "Remédios Constitucionais (Habeas Corpus, MS, MI, HD, Ação Popular).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 71,
+      "materia": "Direito Constitucional",
+      "topico": "Poder Executivo: Atribuições, responsabilidades e crimes de responsabilidade do Presidente.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 72,
+      "materia": "Direito Constitucional",
+      "topico": "Poder Legislativo: Estrutura, atribuições do Congresso Nacional e imunidades parlamentares.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 73,
+      "materia": "Direito Constitucional",
+      "topico": "Defesa do Estado e das Instituições Democráticas: Segurança Pública (Artigo 144).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 74,
+      "materia": "Direito Constitucional",
+      "topico": "Atribuições específicas da Polícia Civil e sua vinculação constitucional.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 75,
+      "materia": "Direito Constitucional",
+      "topico": "Ordem Social: Disposições Gerais e Objetivos da Ordem Social.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 76,
+      "materia": "Direito Constitucional",
+      "topico": "Seguridade Social: Objetivos e princípios organizativos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 77,
+      "materia": "Direito Constitucional",
+      "topico": "Educação, Cultura, Desporto, Ciência, Tecnologia e Inovação.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 78,
+      "materia": "Direito Constitucional",
+      "topico": "Meio Ambiente: Normas de proteção e deveres do Poder Público.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 79,
+      "materia": "Direito Constitucional",
+      "topico": "Família, Criança, Adolescente, Jovem e Idoso: Proteção especial.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 80,
+      "materia": "Direito Constitucional",
+      "topico": "Comunicação Social: Princípios, liberdade de expressão e vedações constitucionais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 81,
+      "materia": "Direitos Humanos",
+      "topico": "Declaração Universal dos Direitos Humanos (DUDH - 1948).",
+      "respondidas": 41,
+      "acertadas": 29
+    },
+    {
+      "id": 82,
+      "materia": "Direitos Humanos",
+      "topico": "Princípios internacionais de proteção à vida, dignidade humana e vedação à tortura.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 83,
+      "materia": "Processo Penal",
+      "topico": "Inquérito Policial: Conceito, características, finalidade e valor probatório.",
+      "respondidas": 10,
+      "acertadas": 7
+    },
+    {
+      "id": 84,
+      "materia": "Processo Penal",
+      "topico": "Notitia Criminis: Formas de cognição e início das investigações.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 85,
+      "materia": "Processo Penal",
+      "topico": "Instauração, condução, prazos de conclusão e arquivamento do IP.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 86,
+      "materia": "Processo Penal",
+      "topico": "Ação Penal Pública: Condicionada e Incondicionada (titularidade e princípios).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 87,
+      "materia": "Processo Penal",
+      "topico": "Ação Penal Privada: Queixa-crime, prazos decadenciais e princípios aplicáveis.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 88,
+      "materia": "Processo Penal",
+      "topico": "Jurisdição e Competência: Critérios de determinação de foro e regras de fixação.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 89,
+      "materia": "Processo Penal",
+      "topico": "Prova Pericial: Exame de Corpo de Delito e sua obrigatoriedade nos crimes com vestígios.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 90,
+      "materia": "Processo Penal",
+      "topico": "Cadeia de Custódia: Conceito, etapas de preservação e reconhecimento da prova pericial.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 91,
+      "materia": "Processo Penal",
+      "topico": "Perícias em Geral e Peritos: Nomeação, impedimentos, laudos e prazos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 92,
+      "materia": "Processo Penal",
+      "topico": "Prioridade de realização do exame de corpo de delito para vítimas específicas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 93,
+      "materia": "Processo Penal",
+      "topico": "Prisões em Espécie: Prisão em Flagrante (fundamentos e momentos do flagrante).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 94,
+      "materia": "Processo Penal",
+      "topico": "Prisão Preventiva: Requisitos, pressupostos e decretação.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 95,
+      "materia": "Processo Penal",
+      "topico": "Prisão Temporária: Lei nº 7.960/1989 (hipóteses e prazos de aplicação).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 96,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006): Infrações penais e procedimentos.",
+      "respondidas": 10,
+      "acertadas": 7
+    },
+    {
+      "id": 97,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei dos Crimes Hediondos (Lei nº 8.072/1990) e suas equiparações.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 98,
+      "materia": "Legislação Penal Especial",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003): Posse, porte e comércio ilegal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 99,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei de Tortura (Lei nº 9.455/1997): Tipificação e sanções.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 100,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei de Abuso de Autoridade (Lei nº 13.869/2019): Sujeitos e condutas criminosas.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 101,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei do Delegado de Polícia (Lei nº 12.830/2013): Prerrogativas e garantias.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 102,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei de Interceptação Telefônica (Lei nº 9.296/1996): Requisitos e vedações.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 103,
+      "materia": "Legislação Penal Especial",
+      "topico": "Pacote Anticrime (Lei nº 13.964/2019): Alterações estruturais na legislação penal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 104,
+      "materia": "Legislação Penal Especial",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990): Aspectos penais e processuais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 105,
+      "materia": "Legislação Penal Especial",
+      "topico": "Crimes de Preconceito de Raça ou Cor (Lei nº 7.716/1989).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 106,
+      "materia": "Legislação Penal Especial",
+      "topico": "Juizados Especiais Cíveis e Criminais (Lei nº 9.099/1995): Infrações de menor potencial ofensivo.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 107,
+      "materia": "Legislação Penal Especial",
+      "topico": "Crimes de Trânsito (Código de Trânsito Brasileiro - Lei nº 9.503/1997).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 108,
+      "materia": "Legislação Penal Especial",
+      "topico": "Lei de Crimes Ambientais (Lei nº 9.605/1998): Infrações e sanções penais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 109,
+      "materia": "Legislação Penal Especial",
+      "topico": "Código de Defesa do Consumidor (Lei nº 8.078/1990): Infrações penais de consumo.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 110,
+      "materia": "Direito Penal",
+      "topico": "Princípios constitucionais fundamentais do Direito Penal brasileiro.",
+      "respondidas": 10,
+      "acertadas": 5
+    },
+    {
+      "id": 111,
+      "materia": "Direito Penal",
+      "topico": "Aplicação da Lei Penal: Lei penal no tempo (retroatividade e ultratividade).",
+      "respondidas": 10,
+      "acertadas": 10
+    },
+    {
+      "id": 112,
+      "materia": "Direito Penal",
+      "topico": "Aplicação da Lei Penal: Lei penal no lugar (territorialidade e extraterritorialidade).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 113,
+      "materia": "Direito Penal",
+      "topico": "Interpretação e analogia na legislação criminal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 114,
+      "materia": "Direito Penal",
+      "topico": "Infração Penal: Distinção entre crime e contravenção; classificações doutrinárias.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 115,
+      "materia": "Direito Penal",
+      "topico": "Sujeito ativo e sujeito passivo da infração penal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 116,
+      "materia": "Direito Penal",
+      "topico": "Teoria do Crime: Conceito analítico de crime e seus elementos constitutivos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 117,
+      "materia": "Direito Penal",
+      "topico": "Fato Típico: Conduta, resultado, nexo de causalidade e tipicidade.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 118,
+      "materia": "Direito Penal",
+      "topico": "Ilicitude (Antijuridicidade) e causas excludentes de ilicitude.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 119,
+      "materia": "Direito Penal",
+      "topico": "Culpabilidade: Conceito, elementos fundamentais e causas de exclusão.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 120,
+      "materia": "Direito Penal",
+      "topico": "Erro de Tipo e Erro de Proibição: Conceito, distinção e efeitos penais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 121,
+      "materia": "Direito Penal",
+      "topico": "Imputabilidade Penal: Menoridade, doença mental e embriaguez.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 122,
+      "materia": "Direito Penal",
+      "topico": "Concurso de Pessoas: Coautoria, participação e comunicabilidade de elementares.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 123,
+      "materia": "Direito Penal",
+      "topico": "Punibilidade: Condições de procedibilidade e causas extintivas da punibilidade (Art. 107).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 124,
+      "materia": "Direito Penal",
+      "topico": "Código Penal - Parte Geral: Estrutura lógica e regras de aplicação.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 125,
+      "materia": "Direito Penal",
+      "topico": "Crimes contra a Pessoa: Homicídio, lesão corporal e noções gerais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 126,
+      "materia": "Direito Penal",
+      "topico": "Crimes contra o Patrimônio: Furto, roubo, extorsão e estelionato.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 127,
+      "materia": "Direito Penal",
+      "topico": "Crimes contra a Administração Pública: Praticados por funcionários e por particulares.",
+      "respondidas": 0,
+      "acertadas": 0
+    }
+  ]
+}
