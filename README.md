@@ -1,6 +1,330 @@
 # 🚔 Rumo aos 80% — PCPR Gestão de Estudos
 
 > Sistema de controle de estudos para o concurso da **Polícia Civil do Paraná**.  
+> Meta: atingir **80% de acurácia** em todos os **185 tópicos** do edital, respeitando os 4 níveis de prioridade.
+
+---
+
+## 📋 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Arquitetura](#arquitetura)
+- [Pré-requisitos](#pré-requisitos)
+- [Como Rodar](#como-rodar)
+  - [Backend (FastAPI)](#backend-fastapi)
+  - [Frontend (React + Vite)](#frontend-react--vite)
+- [Telas do Sistema](#telas-do-sistema)
+- [Endpoints da API](#endpoints-da-api)
+- [Matérias e Prioridades](#matérias-e-prioridades)
+- [Estrutura de Arquivos](#estrutura-de-arquivos)
+
+---
+
+## Sobre o Projeto
+
+O **Rumo aos 80%** é um painel de controle pessoal para gerenciar a preparação para o concurso PCPR. Ele permite:
+
+- Registrar sessões de estudo por tópico (questões respondidas e acertadas)
+- Acompanhar a acurácia em tempo real por tópico e por matéria
+- Receber **sugestão inteligente diária** de 3 tópicos prioritários via algoritmo bayesiano com pesos de edital
+- Visualizar o progresso geral rumo à meta de 80%
+- Consultar a configuração de prioridade e peso de cada matéria via API
+
+### Lógica de Priorização (Sugestão Inteligente)
+
+O algoritmo usa **Média Bayesiana** com três camadas de prioridade:
+
+| Camada | Critério | Objetivo |
+|--------|----------|----------|
+| **Tier 0** | Tópico nunca tocado | Cobertura total — nenhum tópico sem resposta |
+| **Tier 1** | Tópico iniciado mas abaixo de 80% | Refinamento dos pontos fracos confirmados |
+| **Nível de prioridade** | Peso da matéria no edital (1–4) | Matérias de maior pontuação sobem na fila dentro de cada tier |
+
+A acurácia bayesiana evita que tópicos com poucos dados dominem a fila artificialmente:
+
+```
+acurácia_ajustada = (0.5 × 5 + acertadas) / (5 + respondidas) × 100
+```
+
+**Tupla de ordenação por tópico:**
+```
+score = (tier, prioridade_da_matéria, acurácia_bayesiana_da_matéria, acurácia_bayesiana_do_tópico)
+```
+
+---
+
+## Arquitetura
+
+```
+┌─────────────────────────┐        HTTP (localhost:8000)       ┌──────────────────────────┐
+│   Frontend              │ ◄────────────────────────────────► │   Backend                │
+│   React + Vite          │                                     │   FastAPI + Python       │
+│   TanStack Router       │                                     │   Persistência: JSON     │
+│   Tailwind + shadcn/ui  │                                     │                          │
+│   localhost:5173        │                                     │   localhost:8000         │
+└─────────────────────────┘                                     └──────────────────────────┘
+                                                                          │
+                                                                          ▼
+                                                                  progresso.json
+                                                                  (185 tópicos)
+```
+
+---
+
+## Pré-requisitos
+
+| Ferramenta | Versão mínima | Verificar |
+|------------|--------------|-----------|
+| Python | 3.10+ | `python --version` |
+| Node.js | 18+ | `node --version` |
+| npm / bun | qualquer | `npm --version` |
+
+---
+
+## Como Rodar
+
+### Backend (FastAPI)
+
+> Rode a partir da **raiz do projeto** (`PCPR programa/`)
+
+**1. Instalar dependências Python:**
+```bash
+pip install -r requirements.txt
+```
+
+**2. Iniciar o servidor:**
+```bash
+uvicorn main:app --reload
+```
+
+O backend sobe em: **http://localhost:8000**  
+Documentação interativa: **http://localhost:8000/docs**
+
+> O arquivo `progresso.json` é criado automaticamente na primeira execução com todos os 185 tópicos zerados.  
+> Em execuções seguintes, **apenas tópicos novos são inseridos** — o progresso existente nunca é apagado.
+
+---
+
+### Frontend (React + Vite)
+
+> Rode a partir da pasta `rumo-ao-80-pcpr/`
+
+**1. Entrar na pasta:**
+```bash
+cd rumo-ao-80-pcpr
+```
+
+**2. Instalar dependências:**
+```bash
+npm install
+```
+
+**3. Iniciar em modo desenvolvimento:**
+```bash
+npm run dev
+```
+
+O frontend sobe em: **http://localhost:5173**
+
+> ⚠️ O backend precisa estar rodando antes de abrir o frontend.
+
+---
+
+### Rodar os dois ao mesmo tempo (Windows)
+
+Abra **dois terminais separados**:
+
+**Terminal 1 — Backend:**
+```bash
+cd "PCPR programa"
+uvicorn main:app --reload
+```
+
+**Terminal 2 — Frontend:**
+```bash
+cd "PCPR programa/rumo-ao-80-pcpr"
+npm run dev
+```
+
+---
+
+## Telas do Sistema
+
+### Painel Principal
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│  🛡 Painel de Controle PCPR          [TÁTICO • AO VIVO]             │
+├──────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────────────┐ │
+│  │ Tópicos      │ │ Questões     │ │ Acurácia     │ │ Progresso  │ │
+│  │ Revisados    │ │ Respondidas  │ │ Geral        │ │ para 80%   │ │
+│  │    12        │ │    213       │ │   64.3%      │ │   18%      │ │
+│  │ de 185       │ │  137 acertos │ │ Faltam 15.7p │ │ ▓▓░░░░░░  │ │
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────────────┘ │
+└──────────────────────────────────────────────────────────────────────┘
+```
+
+### Sugestão Inteligente do Dia
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  🧠 Sugestão Inteligente do Dia    INTERLEAVING • PRIORIZAÇÃO DE EDITAL     │
+├──────────────────────┬──────────────────────┬──────────────────────────────┤
+│  PRIO #1             │  PRIO #2             │  PRIO #3                     │
+│  LÍNGUA PORTUGUESA   │  TECNOLOGIA / SEG.   │  CIÊNCIAS FORENSES           │
+│  [Máxima · 25 quest] │  [Máxima · 25 quest] │  [Alta · 10 quest]           │
+│                      │                      │                              │
+│  Ortografia oficial  │  Protocolos TCP/IP,  │  Conceito, histórico e       │
+│  e Acentuação        │  HTTP, HTTPS, FTP    │  postulados da               │
+│  gráfica.            │  e DNS.              │  Criminalística.             │
+│                      │                      │                              │
+│  [Não Iniciado] 0/0  │  [Não Iniciado] 0/0  │  [Não Iniciado] 0/0         │
+│  ░░░░░░░░░░░░░░░░    │  ░░░░░░░░░░░░░░░░    │  ░░░░░░░░░░░░░░░░           │
+└──────────────────────┴──────────────────────┴──────────────────────────────┘
+```
+
+### Métricas por Disciplina
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│  🎯 Métricas por Disciplina  (ordenado por Nível de Prioridade)      │
+├───────────────────────┬───────────────────────┬──────────────────────┤
+│  Língua Portuguesa    │  Tecnologia / Seg.    │  Ciências Forenses   │
+│  [Máxima · 25 quest]  │  [Máxima · 25 quest]  │  [Alta · 10 quest]   │
+│  0/19 tópicos na meta │  0/14 tópicos na meta │  0/10 tópicos na meta│
+│                       │                       │                      │
+│  Progresso    Acurácia│  Progresso    Acurácia│  Progresso   Acurácia│
+│     0%          —     │     0%          —     │     0%         —     │
+│  ░░░░░░░░░░░░         │  ░░░░░░░░░░░░         │  ░░░░░░░░░░░░        │
+└───────────────────────┴───────────────────────┴──────────────────────┘
+```
+
+### Dialog — Registrar Sessão de Estudos
+
+```
+┌───────────────────────────────────────────────┐
+│  Registrar Sessão de Estudos                  │
+│                                               │
+│  Tópico: Ortografia oficial e Acentuação      │
+│                                               │
+│  Questões respondidas:  [ 10 ]                │
+│  Questões acertadas:    [  7 ]                │
+│                                               │
+│            [Cancelar]  [Salvar]               │
+└───────────────────────────────────────────────┘
+```
+
+---
+
+## Endpoints da API
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `GET` | `/api/topicos` | Lista todos os 185 tópicos com acurácia e prioridade calculadas |
+| `GET` | `/api/topicos?materia=Estatística` | Filtra tópicos por matéria |
+| `POST` | `/api/atualizar` | Registra nova sessão (acumula questões) |
+| `PUT` | `/api/editar` | Corrige total absoluto de um tópico |
+| `GET` | `/api/dashboard` | Métricas gerais e por matéria, ordenadas por prioridade |
+| `GET` | `/api/sugerir_estudo?quantidade=3` | Sugestão inteligente com pesos de edital |
+| `GET` | `/api/materias/config` | Tabela de prioridades, pesos e questões por matéria |
+| `DELETE` | `/api/resetar` | Zera todos os contadores (uso exclusivo em testes) |
+
+**Exemplo — Registrar sessão:**
+```bash
+curl -X POST http://localhost:8000/api/atualizar \
+  -H "Content-Type: application/json" \
+  -d '{"id_topico": 1, "novas_respondidas": 10, "novas_acertadas": 8}'
+```
+
+**Exemplo — Sugestão do dia:**
+```bash
+curl http://localhost:8000/api/sugerir_estudo?quantidade=3
+```
+
+**Exemplo — Tabela de prioridades:**
+```bash
+curl http://localhost:8000/api/materias/config
+```
+
+---
+
+## Matérias e Prioridades
+
+A ordenação do painel e do algoritmo de sugestão respeita os 4 níveis abaixo, derivados do peso real de cada matéria no edital.
+
+| Nível | Rótulo | Matéria | Questões | Peso % |
+|-------|--------|---------|----------|--------|
+| 1 | Máxima | Língua Portuguesa | 25 | 25% |
+| 1 | Máxima | Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais | 25 | 25% |
+| 2 | Alta | Ciências Forenses | 10 | 10% |
+| 2 | Alta | Estatística | 5 | 5% |
+| 3 | Média | Raciocínio Lógico e Matemático | 5 | 5% |
+| 3 | Média | Contabilidade Geral | 5 | 5% |
+| 3 | Média | Legislação Estadual e Institucional | 5 | 5% |
+| 4 | Complementar | Realidade do Paraná | 5 | 5% |
+| 4 | Complementar | Direito Penal | 3 | 3% |
+| 4 | Complementar | Processo Penal | 3 | 3% |
+| 4 | Complementar | Direito Administrativo | 3 | 3% |
+| 4 | Complementar | Direito Constitucional | 3 | 3% |
+| 4 | Complementar | Direitos Humanos | 3 | 3% |
+| — | — | **Total** | **100** | **100%** |
+
+### Contagem de tópicos por matéria
+
+| Matéria | Tópicos | IDs |
+|---------|---------|-----|
+| Língua Portuguesa | 19 | 1–19 |
+| Informática | 13 | 20–32 |
+| Raciocínio Lógico e Matemático | 15 | 33–47 |
+| Direito Administrativo | 18 | 48–65 |
+| Direito Constitucional | 15 | 66–80 |
+| Direitos Humanos | 2 | 81–82 |
+| Processo Penal | 13 | 83–95 |
+| Legislação Penal Especial | 14 | 96–109 |
+| Direito Penal | 18 | 110–127 |
+| Tecnologia / Seg. Cibernética | 14 | 128–141 |
+| Ciências Forenses | 10 | 142–151 |
+| Estatística | 9 | 152–160 |
+| Contabilidade Geral | 12 | 161–172 |
+| Realidade do Paraná | 13 | 173–185 |
+| **Total** | **185** | — |
+
+---
+
+## Estrutura de Arquivos
+
+```
+PCPR programa/
+│
+├── main.py                  # Backend FastAPI — 185 tópicos, rotas e config de prioridade
+├── progresso.json           # Banco de dados (gerado/atualizado automaticamente)
+├── requirements.txt         # fastapi, uvicorn
+│
+└── rumo-ao-80-pcpr/         # Frontend React
+    ├── package.json
+    ├── vite.config.ts
+    └── src/
+        ├── components/
+        │   ├── pcpr/
+        │   │   ├── Dashboard.tsx        # Painel principal
+        │   │   ├── AccuracyBar.tsx      # Barra de acurácia
+        │   │   └── UpdateTopicDialog.tsx # Dialog de registro
+        │   └── ui/                      # Componentes shadcn/ui
+        ├── lib/
+        │   ├── api.ts                   # Cliente HTTP + tipos (prioridade incluída)
+        │   └── pcpr-data.ts             # Tipos Subject/Topic e funções de cálculo
+        └── routes/
+            └── index.tsx                # Página principal
+```
+
+---
+
+> Projeto pessoal de preparação para concurso. Tópicos e pesos seguem o edital vigente da PCPR.
+
+
+> Sistema de controle de estudos para o concurso da **Polícia Civil do Paraná**.  
 > Meta: atingir **80% de acurácia** em todos os 127 tópicos do edital.
 
 ---
