@@ -2,7 +2,7 @@
 PCPR – Gestão de Estudos  |  Backend FastAPI v2
 Persistência: progresso.json (criado/reinicializado do zero na 1ª execução)
 Rotas:
-  GET  /api/topicos            → 127 tópicos enriquecidos
+  GET  /api/topicos            → 185 tópicos enriquecidos
   POST /api/atualizar          → Soma novas questões ao tópico
   GET  /api/dashboard          → Métricas gerais + por matéria
   GET  /api/sugerir_estudo     → Sugestão inteligente com interleaving
@@ -35,7 +35,7 @@ app.add_middleware(
 
 DB_FILE = "progresso.json"
 
-# ─── 127 Tópicos Oficiais do Edital PCPR (todos zerados) ────────────────────
+# ─── 185 Tópicos Oficiais do Edital PCPR (todos zerados) ────────────────────
 TOPICOS_EDITAL: List[dict] = [
     # ── Língua Portuguesa (1–19) ─────────────────────────────────────────
     {"id": 1,   "materia": "Língua Portuguesa", "topico": "Ortografia oficial e Acentuação gráfica."},
@@ -173,7 +173,147 @@ TOPICOS_EDITAL: List[dict] = [
     {"id": 125, "materia": "Direito Penal", "topico": "Crimes contra a Pessoa: Homicídio, lesão corporal e noções gerais."},
     {"id": 126, "materia": "Direito Penal", "topico": "Crimes contra o Patrimônio: Furto, roubo, extorsão e estelionato."},
     {"id": 127, "materia": "Direito Penal", "topico": "Crimes contra a Administração Pública: Praticados por funcionários e por particulares."},
+    # ── Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais (128–141) ──
+    {"id": 128, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Arquitetura de redes de computadores, internet, intranet e extranet."},
+    {"id": 129, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Protocolos de comunicação fundamentais: TCP/IP, HTTP, HTTPS, FTP e DNS."},
+    {"id": 130, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Funcionamento de navegadores (Browsers) e ferramentas de busca avançada."},
+    {"id": 131, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Os pilares da segurança: Confidencialidade, Integridade, Disponibilidade e Autenticidade (CIDA)."},
+    {"id": 132, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Mecanismos de autenticação, criptografia (simétrica e assimétrica) e assinaturas digitais."},
+    {"id": 133, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Autenticação multifator (MFA) e gerenciamento de acessos."},
+    {"id": 134, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Conceituação de ameaças, riscos, vulnerabilidades e incidentes de segurança."},
+    {"id": 135, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Mecanismos de defesa ativa e passiva: Firewalls, Sistemas de Detecção de Intrusão (IDS/IPS) e Antivírus."},
+    {"id": 136, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Tipos de Malwares e Ataques: Vírus, Worms, Trojans, Spywares e o funcionamento de Ransomwares (sequestro de dados)."},
+    {"id": 137, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Engenharia Social e Phishing: técnicas de manipulação humana para obtenção de dados."},
+    {"id": 138, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Marco Civil da Internet (Lei nº 12.965/2014)."},
+    {"id": 139, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018)."},
+    {"id": 140, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Lei Carolina Dieckmann (Lei nº 12.737/2012) e demais atualizações sobre crimes cibernéticos no Código Penal."},
+    {"id": 141, "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais", "topico": "Noções de preservação de evidências digitais, coleta de metadados e cadeia de custódia aplicada a ativos digitais."},
+    # ── Ciências Forenses (142–151) ──────────────────────────────────────
+    {"id": 142, "materia": "Ciências Forenses", "topico": "Conceito, histórico, objetivos, autonomia e postulados fundamentais da Criminalística."},
+    {"id": 143, "materia": "Ciências Forenses", "topico": "Princípio da observação, da análise, da interpretação e da documentação em Criminalística."},
+    {"id": 144, "materia": "Ciências Forenses", "topico": "Conceituação e classificação dos locais de crime (aberto, fechado, imediato, mediato, relacionado)."},
+    {"id": 145, "materia": "Ciências Forenses", "topico": "Procedimentos operacionais de isolamento e preservação de locais de crime (atuação do primeiro policial no local)."},
+    {"id": 146, "materia": "Ciências Forenses", "topico": "Diferenciação jurídica e técnica entre Vestígio, Indício e Prova."},
+    {"id": 147, "materia": "Ciências Forenses", "topico": "Cadeia de Custódia: Conceito e fundamentação legal (relevância para a validade do processo)."},
+    {"id": 148, "materia": "Ciências Forenses", "topico": "Estudo detalhado das 10 etapas da cadeia de custódia: Reconhecimento, Isolamento, Fixação, Coleta, Acondicionamento, Transporte, Recebimento, Processamento, Armazenamento e Descarte."},
+    {"id": 149, "materia": "Ciências Forenses", "topico": "Traumatologia Forense: energias causadoras de dano (mecânicas, físicas, químicas, bioquímicas, biodinâmicas) e caracterização de ferimentos por armas de fogo, instrumentos cortantes, contundentes e perfurantes."},
+    {"id": 150, "materia": "Ciências Forenses", "topico": "Tanatologia Forense: estudo da morte, determinação da causa e hora da morte (cronotanatognose) e identificação dos fenômenos cadavéricos (abióticos imediatos, consecutivos e transformadores)."},
+    {"id": 151, "materia": "Ciências Forenses", "topico": "Asfixiologia Forense: tipos de asfixias mecânicas (enforcamento, estrangulamento, esganadura, sufocação, afogamento, soterramento, confinamento)."},
+    # ── Estatística (152–160) ─────────────────────────────────────────────
+    {"id": 152, "materia": "Estatística", "topico": "Organização, tabulação e apresentação de dados estatísticos (tabelas de frequências absolutas e relativas)."},
+    {"id": 153, "materia": "Estatística", "topico": "Análise e interpretação de representações gráficas (gráficos de linhas, colunas, barras, setores e histogramas)."},
+    {"id": 154, "materia": "Estatística", "topico": "Cálculo e aplicação prática da Média Aritmética Simples e Média Ponderada."},
+    {"id": 155, "materia": "Estatística", "topico": "Identificação e propriedades da Mediana e da Moda em séries de dados."},
+    {"id": 156, "materia": "Estatística", "topico": "Conceito e cálculo de Amplitude Total."},
+    {"id": 157, "materia": "Estatística", "topico": "Cálculo e interpretação da Variância e do Desvio-Padrão (compreensão de como os dados se afastam da média)."},
+    {"id": 158, "materia": "Estatística", "topico": "Teoria da Probabilidade: conceitos básicos — Experimento aleatório, espaço amostral e eventos."},
+    {"id": 159, "materia": "Estatística", "topico": "Cálculo de probabilidade simples (casos favoráveis sobre casos possíveis)."},
+    {"id": 160, "materia": "Estatística", "topico": "Probabilidade condicional e eventos independentes."},
+    # ── Contabilidade Geral (161–172) ─────────────────────────────────────
+    {"id": 161, "materia": "Contabilidade Geral", "topico": "Definição, objeto de estudo (patrimônio), objetivo e finalidade da contabilidade."},
+    {"id": 162, "materia": "Contabilidade Geral", "topico": "Campo de aplicação e usuários da informação contábil."},
+    {"id": 163, "materia": "Contabilidade Geral", "topico": "Conceito de Bens (tangíveis e intangíveis), Direitos e Obrigações."},
+    {"id": 164, "materia": "Contabilidade Geral", "topico": "Patrimônio Líquido (recursos próprios) e a Equação Fundamental do Patrimônio: Ativo = Passivo + Patrimônio Líquido."},
+    {"id": 165, "materia": "Contabilidade Geral", "topico": "Situações líquidas patrimoniais possíveis: positiva, nula e negativa (passivo a descoberto)."},
+    {"id": 166, "materia": "Contabilidade Geral", "topico": "Fatos contábeis e variações patrimoniais (permutativos, modificativos e mistos)."},
+    {"id": 167, "materia": "Contabilidade Geral", "topico": "Conceito de Contas patrimoniais (ativos, passivos, PL) e contas de resultado (receitas e despesas)."},
+    {"id": 168, "materia": "Contabilidade Geral", "topico": "Teoria das contas e as regras do Método das Partidas Dobradas (para todo débito há um crédito de igual valor)."},
+    {"id": 169, "materia": "Contabilidade Geral", "topico": "Mecanismo de funcionamento de Débito e Crédito (quando aumenta e quando diminui cada tipo de conta)."},
+    {"id": 170, "materia": "Contabilidade Geral", "topico": "Livros contábeis obrigatórios e acessórios: Livro Diário e Livro Razão."},
+    {"id": 171, "materia": "Contabilidade Geral", "topico": "Noções gerais sobre a estrutura do Balanço Patrimonial (BP)."},
+    {"id": 172, "materia": "Contabilidade Geral", "topico": "Noções gerais sobre a estrutura da Demonstração do Resultado do Exercício (DRE)."},
+    # ── Realidade do Paraná (173–185) ─────────────────────────────────────
+    {"id": 173, "materia": "Realidade do Paraná", "topico": "Ocupação e colonização do território paranaense."},
+    {"id": 174, "materia": "Realidade do Paraná", "topico": "Os ciclos econômicos históricos do estado: ciclo da erva-mate, ciclo do café e expansão madeireira."},
+    {"id": 175, "materia": "Realidade do Paraná", "topico": "Movimentos sociais, políticos e fatos históricos marcantes ocorridos no Paraná."},
+    {"id": 176, "materia": "Realidade do Paraná", "topico": "O relevo paranaense (planaltos, Serra do Mar e planície litorânea) e o clima regional."},
+    {"id": 177, "materia": "Realidade do Paraná", "topico": "Principais bacias hidrográficas e o potencial energético do estado."},
+    {"id": 178, "materia": "Realidade do Paraná", "topico": "Vegetação original e a atual cobertura vegetal do território paranaense."},
+    {"id": 179, "materia": "Realidade do Paraná", "topico": "Processo de urbanização e crescimento das principais regiões metropolitanas do estado."},
+    {"id": 180, "materia": "Realidade do Paraná", "topico": "Movimentos migratórios e a composição étnica da população paranaense (contribuição de diferentes fluxos de imigrantes)."},
+    {"id": 181, "materia": "Realidade do Paraná", "topico": "Indicadores socioeconômicos atuais do Paraná (educação, IDH, saúde)."},
+    {"id": 182, "materia": "Realidade do Paraná", "topico": "O agronegócio paranaense e sua relevância nacional (principais culturas e cooperativismo)."},
+    {"id": 183, "materia": "Realidade do Paraná", "topico": "Parque industrial, comércio, setor de serviços e a malha de infraestrutura de transportes do Paraná (rodovias, ferrovias e Porto de Paranaguá)."},
+    {"id": 184, "materia": "Realidade do Paraná", "topico": "Expressões culturais, folclore, culinária típica e patrimônio histórico-cultural do Paraná."},
+    {"id": 185, "materia": "Realidade do Paraná", "topico": "Divisão político-administrativa atual do estado (mesorregiões e microrregiões)."},
 ]
+
+# ─── Configuração de Prioridade das Matérias (Edital PCPR) ──────────────────
+# Fonte: estrutura oficial do edital.
+# Esta configuração é lida em tempo de execução e NÃO modifica o progresso.json
+# nem apaga nenhum dado de estudo existente.
+# Campos:
+#   prioridade       – nível 1 (máxima) a 4 (complementar)
+#   label_prioridade – rótulo exibível
+#   questoes_prova   – quantidade de questões no edital
+#   peso_percentual  – participação percentual na nota total
+#   ordem            – posição canônica dentro do nível (usada para ordenação)
+MATERIAS_CONFIG: dict = {
+    # ── Nível 1 – Prioridade Máxima (50% da prova) ───────────────────────────
+    "Língua Portuguesa": {
+        "prioridade": 1, "label_prioridade": "Máxima",
+        "questoes_prova": 25, "peso_percentual": 25.0, "ordem": 1,
+    },
+    "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais": {
+        "prioridade": 1, "label_prioridade": "Máxima",
+        "questoes_prova": 25, "peso_percentual": 25.0, "ordem": 2,
+    },
+    # ── Nível 2 – Prioridade Alta (15% da prova) ─────────────────────────────
+    "Ciências Forenses": {
+        "prioridade": 2, "label_prioridade": "Alta",
+        "questoes_prova": 10, "peso_percentual": 10.0, "ordem": 3,
+    },
+    "Estatística": {
+        "prioridade": 2, "label_prioridade": "Alta",
+        "questoes_prova": 5, "peso_percentual": 5.0, "ordem": 4,
+    },
+    # ── Nível 3 – Prioridade Média (15% da prova) ────────────────────────────
+    "Raciocínio Lógico e Matemático": {
+        "prioridade": 3, "label_prioridade": "Média",
+        "questoes_prova": 5, "peso_percentual": 5.0, "ordem": 5,
+    },
+    "Contabilidade Geral": {
+        "prioridade": 3, "label_prioridade": "Média",
+        "questoes_prova": 5, "peso_percentual": 5.0, "ordem": 6,
+    },
+    "Legislação Estadual e Institucional": {
+        "prioridade": 3, "label_prioridade": "Média",
+        "questoes_prova": 5, "peso_percentual": 5.0, "ordem": 7,
+    },
+    # ── Nível 4 – Prioridade Complementar (20% da prova) ────────────────────
+    "Realidade do Paraná": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 5, "peso_percentual": 5.0, "ordem": 8,
+    },
+    "Direito Penal": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 3, "peso_percentual": 3.0, "ordem": 9,
+    },
+    "Processo Penal": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 3, "peso_percentual": 3.0, "ordem": 10,
+    },
+    "Direito Administrativo": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 3, "peso_percentual": 3.0, "ordem": 11,
+    },
+    "Direito Constitucional": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 3, "peso_percentual": 3.0, "ordem": 12,
+    },
+    "Direitos Humanos": {
+        "prioridade": 4, "label_prioridade": "Complementar",
+        "questoes_prova": 3, "peso_percentual": 3.0, "ordem": 13,
+    },
+}
+
+
+def _materia_config(nome: str) -> dict:
+    """Retorna a config de prioridade da matéria, ou padrão neutro se não mapeada."""
+    return MATERIAS_CONFIG.get(nome, {
+        "prioridade": 3, "label_prioridade": "Média",
+        "questoes_prova": 0, "peso_percentual": 0.0, "ordem": 99,
+    })
 
 
 # ─── Persistência ────────────────────────────────────────────────────────────
@@ -232,7 +372,16 @@ def _status(percentual: float, respondidas: int) -> str:
 
 def _enrich(t: dict) -> dict:
     pct = _percentual(t["acertadas"], t["respondidas"])
-    return {**t, "percentual": pct, "status": _status(pct, t["respondidas"])}
+    cfg = _materia_config(t["materia"])
+    return {
+        **t,
+        "percentual": pct,
+        "status": _status(pct, t["respondidas"]),
+        "prioridade": cfg["prioridade"],
+        "label_prioridade": cfg["label_prioridade"],
+        "questoes_prova": cfg["questoes_prova"],
+        "peso_percentual": cfg["peso_percentual"],
+    }
 
 
 # ─── Modelos de entrada ──────────────────────────────────────────────────────
@@ -340,10 +489,19 @@ def get_dashboard():
     materias = []
     for dados in mapa.values():
         pct = _percentual(dados["acertadas"], dados["respondidas"])
-        materias.append({**dados, "percentual": pct, "abaixo_da_meta": pct < 80})
+        cfg = _materia_config(dados["materia"])
+        materias.append({
+            **dados,
+            "percentual": pct,
+            "abaixo_da_meta": pct < 80,
+            "prioridade": cfg["prioridade"],
+            "label_prioridade": cfg["label_prioridade"],
+            "questoes_prova": cfg["questoes_prova"],
+            "peso_percentual": cfg["peso_percentual"],
+        })
 
-    # Pior taxa primeiro (não iniciados têm 0% → ficam no topo)
-    materias.sort(key=lambda x: x["percentual"])
+    # Ordena: prioridade crescente (1=Máxima primeiro), depois pior percentual no topo do grupo
+    materias.sort(key=lambda x: (x["prioridade"], _materia_config(x["materia"])["ordem"], x["percentual"]))
 
     alertas = [m["materia"] for m in materias if m["abaixo_da_meta"] and m["respondidas"] > 0]
 
@@ -366,7 +524,7 @@ def sugerir_estudo(quantidade: int = Query(default=3, ge=1, le=20)):
         return {
             "sugestoes": [],
             "quantidade_retornada": 0,
-            "mensagem": "Parabéns! Todos os 127 tópicos atingiram a meta de 80%.",
+            "mensagem": "Parabéns! Todos os 185 tópicos atingiram a meta de 80%.",
         }
 
     # ── Pré-calcula estatísticas por matéria ─────────────────────────────
@@ -391,13 +549,14 @@ def sugerir_estudo(quantidade: int = Query(default=3, ge=1, le=20)):
         Prioridade (menor = mais urgente):
           tier 0 – tópico nunca tocado (cobrir todos os tópicos o mais rápido possível)
           tier 1 – tópico iniciado mas abaixo da meta (refinamento após cobertura total)
-        Dentro do tier 0: piores matérias bayesianas primeiro (cobre as mais frágeis antes)
-        Dentro do tier 1: menor acurácia bayesiana da matéria → menor acurácia bayesiana do tópico
+        Dentro de cada tier: nível de prioridade da matéria primeiro (1=Máxima),
+        depois pior matéria bayesiana e pior tópico bayesiano.
         """
-        tier  = 0 if t["respondidas"] == 0 else 1
-        s_bay = bayesian_acc(subj_acertadas[t["materia"]], subj_respondidas[t["materia"]])
-        t_bay = bayesian_acc(t["acertadas"], t["respondidas"])
-        return (tier, s_bay, t_bay)
+        tier      = 0 if t["respondidas"] == 0 else 1
+        prioridade = _materia_config(t["materia"])["prioridade"]
+        s_bay     = bayesian_acc(subj_acertadas[t["materia"]], subj_respondidas[t["materia"]])
+        t_bay     = bayesian_acc(t["acertadas"], t["respondidas"])
+        return (tier, prioridade, s_bay, t_bay)
 
     candidatos.sort(key=score)
 
@@ -437,7 +596,28 @@ def resetar_banco():
     """Reinicia o progresso.json do zero. Use apenas para testes."""
     db = _build_fresh_db()
     save_db(db)
-    return {"mensagem": "Banco zerado com sucesso. Todos os 127 tópicos reiniciados."}
+    return {"mensagem": "Banco zerado com sucesso. Todos os 185 tópicos reiniciados."}
+
+
+@app.get("/api/materias/config", summary="Configuração de prioridade de todas as matérias")
+def get_materias_config():
+    """
+    Retorna a tabela de prioridades do edital PCPR:
+    nível, rótulo, quantidade de questões na prova e peso percentual.
+    Esta rota é somente leitura — não altera nenhum dado de progresso.
+    """
+    resultado = []
+    for nome, cfg in MATERIAS_CONFIG.items():
+        resultado.append({
+            "materia": nome,
+            "prioridade": cfg["prioridade"],
+            "label_prioridade": cfg["label_prioridade"],
+            "questoes_prova": cfg["questoes_prova"],
+            "peso_percentual": cfg["peso_percentual"],
+            "ordem": cfg["ordem"],
+        })
+    resultado.sort(key=lambda x: x["ordem"])
+    return {"materias": resultado, "total": len(resultado)}
 
 
 @app.get("/", include_in_schema=False)

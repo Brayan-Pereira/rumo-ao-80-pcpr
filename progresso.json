@@ -888,6 +888,412 @@
       "topico": "Crimes contra a Administração Pública: Praticados por funcionários e por particulares.",
       "respondidas": 0,
       "acertadas": 0
+    },
+    {
+      "id": 128,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Arquitetura de redes de computadores, internet, intranet e extranet.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 129,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Protocolos de comunicação fundamentais: TCP/IP, HTTP, HTTPS, FTP e DNS.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 130,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Funcionamento de navegadores (Browsers) e ferramentas de busca avançada.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 131,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Os pilares da segurança: Confidencialidade, Integridade, Disponibilidade e Autenticidade (CIDA).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 132,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Mecanismos de autenticação, criptografia (simétrica e assimétrica) e assinaturas digitais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 133,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Autenticação multifator (MFA) e gerenciamento de acessos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 134,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Conceituação de ameaças, riscos, vulnerabilidades e incidentes de segurança.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 135,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Mecanismos de defesa ativa e passiva: Firewalls, Sistemas de Detecção de Intrusão (IDS/IPS) e Antivírus.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 136,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Tipos de Malwares e Ataques: Vírus, Worms, Trojans, Spywares e o funcionamento de Ransomwares (sequestro de dados).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 137,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Engenharia Social e Phishing: técnicas de manipulação humana para obtenção de dados.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 138,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Marco Civil da Internet (Lei nº 12.965/2014).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 139,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 140,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Lei Carolina Dieckmann (Lei nº 12.737/2012) e demais atualizações sobre crimes cibernéticos no Código Penal.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 141,
+      "materia": "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais",
+      "topico": "Noções de preservação de evidências digitais, coleta de metadados e cadeia de custódia aplicada a ativos digitais.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 142,
+      "materia": "Ciências Forenses",
+      "topico": "Conceito, histórico, objetivos, autonomia e postulados fundamentais da Criminalística.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 143,
+      "materia": "Ciências Forenses",
+      "topico": "Princípio da observação, da análise, da interpretação e da documentação em Criminalística.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 144,
+      "materia": "Ciências Forenses",
+      "topico": "Conceituação e classificação dos locais de crime (aberto, fechado, imediato, mediato, relacionado).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 145,
+      "materia": "Ciências Forenses",
+      "topico": "Procedimentos operacionais de isolamento e preservação de locais de crime (atuação do primeiro policial no local).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 146,
+      "materia": "Ciências Forenses",
+      "topico": "Diferenciação jurídica e técnica entre Vestígio, Indício e Prova.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 147,
+      "materia": "Ciências Forenses",
+      "topico": "Cadeia de Custódia: Conceito e fundamentação legal (relevância para a validade do processo).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 148,
+      "materia": "Ciências Forenses",
+      "topico": "Estudo detalhado das 10 etapas da cadeia de custódia: Reconhecimento, Isolamento, Fixação, Coleta, Acondicionamento, Transporte, Recebimento, Processamento, Armazenamento e Descarte.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 149,
+      "materia": "Ciências Forenses",
+      "topico": "Traumatologia Forense: energias causadoras de dano (mecânicas, físicas, químicas, bioquímicas, biodinâmicas) e caracterização de ferimentos por armas de fogo, instrumentos cortantes, contundentes e perfurantes.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 150,
+      "materia": "Ciências Forenses",
+      "topico": "Tanatologia Forense: estudo da morte, determinação da causa e hora da morte (cronotanatognose) e identificação dos fenômenos cadavéricos (abióticos imediatos, consecutivos e transformadores).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 151,
+      "materia": "Ciências Forenses",
+      "topico": "Asfixiologia Forense: tipos de asfixias mecânicas (enforcamento, estrangulamento, esganadura, sufocação, afogamento, soterramento, confinamento).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 152,
+      "materia": "Estatística",
+      "topico": "Organização, tabulação e apresentação de dados estatísticos (tabelas de frequências absolutas e relativas).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 153,
+      "materia": "Estatística",
+      "topico": "Análise e interpretação de representações gráficas (gráficos de linhas, colunas, barras, setores e histogramas).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 154,
+      "materia": "Estatística",
+      "topico": "Cálculo e aplicação prática da Média Aritmética Simples e Média Ponderada.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 155,
+      "materia": "Estatística",
+      "topico": "Identificação e propriedades da Mediana e da Moda em séries de dados.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 156,
+      "materia": "Estatística",
+      "topico": "Conceito e cálculo de Amplitude Total.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 157,
+      "materia": "Estatística",
+      "topico": "Cálculo e interpretação da Variância e do Desvio-Padrão (compreensão de como os dados se afastam da média).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 158,
+      "materia": "Estatística",
+      "topico": "Teoria da Probabilidade: conceitos básicos — Experimento aleatório, espaço amostral e eventos.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 159,
+      "materia": "Estatística",
+      "topico": "Cálculo de probabilidade simples (casos favoráveis sobre casos possíveis).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 160,
+      "materia": "Estatística",
+      "topico": "Probabilidade condicional e eventos independentes.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 161,
+      "materia": "Contabilidade Geral",
+      "topico": "Definição, objeto de estudo (patrimônio), objetivo e finalidade da contabilidade.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 162,
+      "materia": "Contabilidade Geral",
+      "topico": "Campo de aplicação e usuários da informação contábil.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 163,
+      "materia": "Contabilidade Geral",
+      "topico": "Conceito de Bens (tangíveis e intangíveis), Direitos e Obrigações.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 164,
+      "materia": "Contabilidade Geral",
+      "topico": "Patrimônio Líquido (recursos próprios) e a Equação Fundamental do Patrimônio: Ativo = Passivo + Patrimônio Líquido.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 165,
+      "materia": "Contabilidade Geral",
+      "topico": "Situações líquidas patrimoniais possíveis: positiva, nula e negativa (passivo a descoberto).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 166,
+      "materia": "Contabilidade Geral",
+      "topico": "Fatos contábeis e variações patrimoniais (permutativos, modificativos e mistos).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 167,
+      "materia": "Contabilidade Geral",
+      "topico": "Conceito de Contas patrimoniais (ativos, passivos, PL) e contas de resultado (receitas e despesas).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 168,
+      "materia": "Contabilidade Geral",
+      "topico": "Teoria das contas e as regras do Método das Partidas Dobradas (para todo débito há um crédito de igual valor).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 169,
+      "materia": "Contabilidade Geral",
+      "topico": "Mecanismo de funcionamento de Débito e Crédito (quando aumenta e quando diminui cada tipo de conta).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 170,
+      "materia": "Contabilidade Geral",
+      "topico": "Livros contábeis obrigatórios e acessórios: Livro Diário e Livro Razão.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 171,
+      "materia": "Contabilidade Geral",
+      "topico": "Noções gerais sobre a estrutura do Balanço Patrimonial (BP).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 172,
+      "materia": "Contabilidade Geral",
+      "topico": "Noções gerais sobre a estrutura da Demonstração do Resultado do Exercício (DRE).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 173,
+      "materia": "Realidade do Paraná",
+      "topico": "Ocupação e colonização do território paranaense.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 174,
+      "materia": "Realidade do Paraná",
+      "topico": "Os ciclos econômicos históricos do estado: ciclo da erva-mate, ciclo do café e expansão madeireira.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 175,
+      "materia": "Realidade do Paraná",
+      "topico": "Movimentos sociais, políticos e fatos históricos marcantes ocorridos no Paraná.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 176,
+      "materia": "Realidade do Paraná",
+      "topico": "O relevo paranaense (planaltos, Serra do Mar e planície litorânea) e o clima regional.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 177,
+      "materia": "Realidade do Paraná",
+      "topico": "Principais bacias hidrográficas e o potencial energético do estado.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 178,
+      "materia": "Realidade do Paraná",
+      "topico": "Vegetação original e a atual cobertura vegetal do território paranaense.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 179,
+      "materia": "Realidade do Paraná",
+      "topico": "Processo de urbanização e crescimento das principais regiões metropolitanas do estado.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 180,
+      "materia": "Realidade do Paraná",
+      "topico": "Movimentos migratórios e a composição étnica da população paranaense (contribuição de diferentes fluxos de imigrantes).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 181,
+      "materia": "Realidade do Paraná",
+      "topico": "Indicadores socioeconômicos atuais do Paraná (educação, IDH, saúde).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 182,
+      "materia": "Realidade do Paraná",
+      "topico": "O agronegócio paranaense e sua relevância nacional (principais culturas e cooperativismo).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 183,
+      "materia": "Realidade do Paraná",
+      "topico": "Parque industrial, comércio, setor de serviços e a malha de infraestrutura de transportes do Paraná (rodovias, ferrovias e Porto de Paranaguá).",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 184,
+      "materia": "Realidade do Paraná",
+      "topico": "Expressões culturais, folclore, culinária típica e patrimônio histórico-cultural do Paraná.",
+      "respondidas": 0,
+      "acertadas": 0
+    },
+    {
+      "id": 185,
+      "materia": "Realidade do Paraná",
+      "topico": "Divisão político-administrativa atual do estado (mesorregiões e microrregiões).",
+      "respondidas": 0,
+      "acertadas": 0
     }
   ]
 }

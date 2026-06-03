@@ -15,6 +15,10 @@ export type ApiTopic = {
   acertadas: number;
   percentual: number;
   status: "Não Iniciado" | "Abaixo da Meta" | "Meta Atingida";
+  prioridade: 1 | 2 | 3 | 4;
+  label_prioridade: "Máxima" | "Alta" | "Média" | "Complementar";
+  questoes_prova: number;
+  peso_percentual: number;
 };
 
 export type ApiTopicosResponse = {
@@ -30,6 +34,24 @@ export type ApiMateria = {
   abaixo_da_meta: boolean;
   total_topicos: number;
   topicos_meta: number;
+  prioridade: 1 | 2 | 3 | 4;
+  label_prioridade: "Máxima" | "Alta" | "Média" | "Complementar";
+  questoes_prova: number;
+  peso_percentual: number;
+};
+
+export type ApiMateriaConfig = {
+  materia: string;
+  prioridade: 1 | 2 | 3 | 4;
+  label_prioridade: "Máxima" | "Alta" | "Média" | "Complementar";
+  questoes_prova: number;
+  peso_percentual: number;
+  ordem: number;
+};
+
+export type ApiMateriasConfigResponse = {
+  materias: ApiMateriaConfig[];
+  total: number;
 };
 
 export type ApiDashboard = {
@@ -77,6 +99,11 @@ const MATERIA_META: Record<string, { key: string; short: string }> = {
   "Processo Penal":               { key: "proc_penal", short: "Processo Penal" },
   "Legislação Penal Especial":    { key: "leg_esp",    short: "Leg. Especial" },
   "Direito Penal":                { key: "dir_penal",  short: "D. Penal" },
+  "Tecnologia, Sistemas de Informação/Comunicação, Segurança Cibernética e Crimes Digitais": { key: "tecnologia_seg", short: "Tecnologia/Seg." },
+  "Ciências Forenses":            { key: "ciencias_forenses", short: "C. Forenses" },
+  "Estatística":                  { key: "estatistica", short: "Estatística" },
+  "Contabilidade Geral":          { key: "contabilidade", short: "Contabilidade" },
+  "Realidade do Paraná":          { key: "realidade_pr",  short: "Realidade PR" },
 };
 
 // Ordem de exibição das matérias no painel
@@ -178,4 +205,8 @@ export async function editarTopico(
       body: JSON.stringify(payload),
     })
   );
+}
+
+export async function fetchMateriasConfig(): Promise<ApiMateriasConfigResponse> {
+  return handleResponse<ApiMateriasConfigResponse>(await fetch(`${API_BASE}/api/materias/config`));
 }
